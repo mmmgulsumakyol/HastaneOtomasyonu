@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{95ABCCC3-9856-45FE-BAEB-954CBAEF4F9F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HastaneOtomasyonu</RootNamespace>
+    <AssemblyName>HastaneOtomasyonu</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.2.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.25.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.25.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.3.5\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.3.5\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.4.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.4.0\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="ZstdSharp, Version=0.7.1.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZstdSharp.Port.0.7.1\lib\net461\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BilgiGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BilgiGuncelle.Designer.cs">
+      <DependentUpon>BilgiGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DktrGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DktrGiris.Designer.cs">
+      <DependentUpon>DktrGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnaSayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnaSayfa.Designer.cs">
+      <DependentUpon>AnaSayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DktrBilgi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DktrBilgi.Designer.cs">
+      <DependentUpon>DktrBilgi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SekHastaOdaKayit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SekHastaOdaKayit.Designer.cs">
+      <DependentUpon>SekHastaOdaKayit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HastaRandevuSorgula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HastaRandevuSorgula.Designer.cs">
+      <DependentUpon>HastaRandevuSorgula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klinik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Klinik.Designer.cs">
+      <DependentUpon>Klinik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LabSonucSorgu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LabSonucSorgu.Designer.cs">
+      <DependentUpon>LabSonucSorgu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SekDoktor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SekDoktor.Designer.cs">
+      <DependentUpon>SekDoktor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SekIsmeGöreOda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SekIsmeGöreOda.Designer.cs">
+      <DependentUpon>SekIsmeGöreOda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hasta_kontrol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hasta_kontrol.Designer.cs">
+      <DependentUpon>hasta_kontrol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KayitOl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KayitOl.Designer.cs">
+      <DependentUpon>KayitOl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Laboratuvar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Laboratuvar.Designer.cs">
+      <DependentUpon>Laboratuvar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LabSonuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LabSonuc.Designer.cs">
+      <DependentUpon>LabSonuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandevuGecmisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RandevuGecmisi.Designer.cs">
+      <DependentUpon>RandevuGecmisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Randevularım.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Randevularım.Designer.cs">
+      <DependentUpon>Randevularım.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReceteGoruntule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceteGoruntule.Designer.cs">
+      <DependentUpon>ReceteGoruntule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReceteYaz.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReceteYaz.Designer.cs">
+      <DependentUpon>ReceteYaz.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SekHastaBilgi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SekHastaBilgi.Designer.cs">
+      <DependentUpon>SekHastaBilgi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SekLab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SekLab.Designer.cs">
+      <DependentUpon>SekLab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SekreterGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SekreterGiris.Designer.cs">
+      <DependentUpon>SekreterGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sifremi_unuttum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sifremi_unuttum.Designer.cs">
+      <DependentUpon>sifremi_unuttum.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BilgiGuncelle.resx">
+      <DependentUpon>BilgiGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DktrGiris.resx">
+      <DependentUpon>DktrGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnaSayfa.resx">
+      <DependentUpon>AnaSayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DktrBilgi.resx">
+      <DependentUpon>DktrBilgi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SekHastaOdaKayit.resx">
+      <DependentUpon>SekHastaOdaKayit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HastaRandevuSorgula.resx">
+      <DependentUpon>HastaRandevuSorgula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hasta_kontrol.resx">
+      <DependentUpon>hasta_kontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KayitOl.resx">
+      <DependentUpon>KayitOl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Klinik.resx">
+      <DependentUpon>Klinik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Laboratuvar.resx">
+      <DependentUpon>Laboratuvar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LabSonuc.resx">
+      <DependentUpon>LabSonuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LabSonucSorgu.resx">
+      <DependentUpon>LabSonucSorgu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RandevuGecmisi.resx">
+      <DependentUpon>RandevuGecmisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Randevularım.resx">
+      <DependentUpon>Randevularım.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceteGoruntule.resx">
+      <DependentUpon>ReceteGoruntule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReceteYaz.resx">
+      <DependentUpon>ReceteYaz.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SekDoktor.resx">
+      <DependentUpon>SekDoktor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SekHastaBilgi.resx">
+      <DependentUpon>SekHastaBilgi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SekIsmeGöreOda.resx">
+      <DependentUpon>SekIsmeGöreOda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SekLab.resx">
+      <DependentUpon>SekLab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SekreterGiris.resx">
+      <DependentUpon>SekreterGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sifremi_unuttum.resx">
+      <DependentUpon>sifremi_unuttum.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Content\fontawesome\animated.less" />
+    <None Include="Content\fontawesome\bordered-pulled.less" />
+    <None Include="Content\fontawesome\core.less" />
+    <None Include="Content\fontawesome\fixed-width.less" />
+    <None Include="Content\fontawesome\font-awesome.less" />
+    <None Include="Content\fontawesome\icons.less" />
+    <None Include="Content\fontawesome\larger.less" />
+    <None Include="Content\fontawesome\list.less" />
+    <None Include="Content\fontawesome\mixins.less" />
+    <None Include="Content\fontawesome\path.less" />
+    <None Include="Content\fontawesome\rotated-flipped.less" />
+    <None Include="Content\fontawesome\screen-reader.less" />
+    <None Include="Content\fontawesome\stacked.less" />
+    <None Include="Content\fontawesome\variables.less" />
+    <None Include="Content\fonts\fontawesome-webfont.eot" />
+    <None Include="Content\fonts\fontawesome-webfont.ttf" />
+    <None Include="Content\fonts\fontawesome-webfont.woff" />
+    <None Include="Content\fonts\fontawesome-webfont.woff2" />
+    <None Include="Content\fonts\FontAwesome.otf" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\indir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\health-icon-transparent-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\indir %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-clipart-computer-icons-saving-money-forgot-password-icon-saving-smiley-thumbnail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giris-yap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sifremi-unuttum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kayit_ol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ekran görüntüsü 2024-05-11 112831.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ekran görüntüsü 2024-05-11 113545.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ekran görüntüsü 2024-05-11 113716.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-computer-icons-font-hospital-symbol-angle-text-rectangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-traffic-sign-hospital-road-traffic-signs-blue-angle-text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-clipart-white-hospital-illustration-children-s-hospital-free-content-hopital-presentation-sticker-thumbnail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngtree-hospital-map-markers-icon-tag-photo-png-image_14029250.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-transparent-computer-icons-user-profile-symbol-register-button-miscellaneous-blue-logo-thumbnail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uyekayit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ekran görüntüsü 2024-05-11 123739.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\indir %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-clipart-agenda-meeting-logo-google-calendar-meeting-text-label.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-clipart-agenda-meeting-logo-google-calendar-meeting-text-label1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-clipart-agenda-meeting-logo-google-calendar-meeting-text-label2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\magnifying-glass.png" />
+    <None Include="Resources\seo.png" />
+    <None Include="Resources\medical-team.png" />
+    <None Include="Resources\healthcare.png" />
+    <None Include="Resources\admin.png" />
+    <None Include="Resources\update %281%29.png" />
+    <None Include="Resources\cv.png" />
+    <None Include="Resources\medical.png" />
+    <None Include="Resources\diskette.png" />
+    <None Include="Resources\log-out %281%29.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\research.png" />
+    <None Include="Resources\timetable.png" />
+    <None Include="Resources\People-Doctor-Male-icon.png" />
+    <None Include="Resources\refresh-data1.png" />
+    <None Include="Resources\logout1.png" />
+    <None Include="Resources\update1.png" />
+    <None Include="Resources\refresh-action1.png" />
+    <None Include="Resources\calendar1.png" />
+    <None Include="Resources\checklist1.png" />
+    <None Include="Resources\refresh-data.png" />
+    <None Include="Resources\refresh-action.png" />
+    <None Include="Resources\giris-yap1.png" />
+    <None Include="Resources\checklist.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\calendar.png" />
+    <None Include="Resources\log-out1.png" />
+    <None Include="Resources\log-out.png" />
+    <None Include="Resources\update.png" />
+    <None Include="Resources\images.png" />
+    <None Include="Resources\kisspng-computer-icons-calendar-date-time-rally-5ac42ed341a997.536495271522806483269.jpg" />
+    <None Include="Resources\istockphoto-628398494-170667a.jpg" />
+    <None Include="Resources\takvim-ikonu-1.jpg" />
+    <None Include="Resources\png-clipart-agenda-meeting-logo-google-calendar-meeting-text-label3.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
